@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Store - Premium Fashion & Accessories</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">
+      <i class="fas fa-gem me-2"></i>Luxury Store
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle no-arrow" href="#" role="button" data-bs-toggle="dropdown">
+            Men's Collection
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="mens_shoes.html"><i class="fas fa-shoe-prints me-2"></i>Shoes</a></li>
+            <li><a class="dropdown-item" href="mens-watches.html"><i class="fas fa-clock me-2"></i>Watches</a></li>
+            <li><a class="dropdown-item" href="mens-perfumes.html"><i class="fas fa-spray-can me-2"></i>Perfumes</a></li>
+            <li><a class="dropdown-item" href="mens-glasses.html"><i class="fas fa-glasses me-2"></i>Glasses</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle no-arrow" href="#" role="button" data-bs-toggle="dropdown">
+            Women's Collection
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="womens_shoes.html"><i class="fas fa-shoe-prints me-2"></i>Shoes</a></li>
+            <li><a class="dropdown-item" href="womens-watches.html"><i class="fas fa-clock me-2"></i>Watches</a></li>
+            <li><a class="dropdown-item" href="womens-perfumes.html"><i class="fas fa-spray-can me-2"></i>Perfumes</a></li>
+            <li><a class="dropdown-item" href="womens-glasses.html"><i class="fas fa-glasses me-2"></i>Glasses</a></li>
+            <li><a class="dropdown-item" href="womens_sandals.html"><i class="fas fa-shoe-prints me-2"></i>Sandals</a></li>
+
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="bags.html"><i class="fas fa-handbag me-2"></i>Hand Bags</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section with Video Background -->
+<section class="hero-section">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="hero-slide">
+          <video class="video-background" autoplay muted loop playsinline>
+            <source src="./v2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="container">
+            <div class="row align-items-center min-vh-75">
+              <div class="col-lg-6">
+                <div class="hero-content">
+                  <h1 class="fw-bold mb-4">Welcome to Luxury Store</h1>
+                  <p class="mb-4">Discover premium fashion, accessories, and lifestyle products that define elegance and sophistication.</p>
+                  <a href="#categories" class="btn btn-luxury btn-lg">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="hero-slide">
+          <video class="video-background" autoplay muted loop playsinline>
+            <source src="https://www.pexels.com/download/video/17213788/" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="container">
+            <div class="row align-items-center min-vh-75">
+              <div class="col-lg-6">
+                <div class="hero-content">
+                  <h1 class="fw-bold mb-4">Premium Collections</h1>
+                  <p class="mb-4">Explore our curated selection of luxury watches, designer shoes, and exclusive fragrances.</p>
+                  <a href="#categories" class="btn btn-luxury btn-lg">Explore Collections</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="hero-slide">
+          <video class="video-background" autoplay muted loop playsinline>
+            <source src="./v1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="container">
+            <div class="row align-items-center min-vh-75">
+              <div class="col-lg-6">
+                <div class="hero-content">
+                  <h1 class="fw-bold mb-4">Luxury Redefined</h1>
+                  <p class="mb-4">Experience the finest in fashion with our exclusive range of premium products and personalized service.</p>
+                  <a href="contact.html" class="btn btn-luxury btn-lg">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<!-- Categories Section -->
+<section id="categories" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold text-dark mb-3">Our Collections</h2>
+      <p class="lead text-muted">Discover luxury across all categories</p>
+    </div>
+    <div class="row g-4">
+      <!-- Men's Collection -->
+      <div class="col-lg-6">
+        <div class="category-card h-100">
+          <div class="card border-0 shadow-lg h-100 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1630694892076-e3b924bbe017?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                   class="card-img-top" alt="Men's Luxury Collection" style="height: 250px; object-fit: cover;">
+              <div class="position-absolute top-0 start-0 p-3">
+                <h3 class="text-white fw-bold mb-0">Men's Collection</h3>
+                <!-- <p class="text-white-50 mb-0">Sophisticated styles for the modern gentleman</p> -->
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-3">
+                <div class="col-4">
+                  <a href="mens_shoes.html" class="category-link text-decoration-none">
+                    <div class="category-item text-center p-2">
+                      <div class="position-relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1597045566677-8cf032ed6634?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             class="img-fluid rounded-circle mb-2" style="width: 200px; height: 200px; object-fit: cover;" alt="Men's Shoes">
+                        <div class="bg-primary bg-opacity-75 text-white position-absolute bottom-0 start-50 translate-middle-x px-2 rounded-pill small">
+                          Shop Now
+                        </div>
+                      </div>
+                      <p class="mb-0 fw-medium">Shoes</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-4">
+                  <a href="mens-watches.html" class="category-link text-decoration-none">
+                    <div class="category-item text-center p-2">
+                      <div class="position-relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                             class="img-fluid rounded-circle mb-2" style="width: 200px; height: 200px; object-fit: cover;" alt="Men's Watches">
+                        <div class="bg-primary bg-opacity-75 text-white position-absolute bottom-0 start-50 translate-middle-x px-2 rounded-pill small">
+                          Shop Now
+                        </div>
+                      </div>
+                      <p class="mb-0 fw-medium">Watches</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-4">
+                  <a href="mens-perfumes.html" class="category-link text-decoration-none">
+                    <div class="category-item text-center p-2">
+                      <div class="position-relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             class="img-fluid rounded-circle mb-2" style="width: 200px; height: 200px; object-fit: cover;" alt="Men's Perfumes">
+                        <div class="bg-primary bg-opacity-75 text-white position-absolute bottom-0 start-50 translate-middle-x px-2 rounded-pill small">
+                          Shop Now
+                        </div>
+                      </div>
+                      <p class="mb-0 fw-medium">Perfumes</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-4">
+                  <a href="mens-glasses.html" class="category-link text-decoration-none">
+                    <div class="category-item text-center p-2">
+                      <div class="position-relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             class="img-fluid rounded-circle mb-2" style="width: 200px; height: 200px; object-fit: cover;" alt="Men's Glasses">
+                        <div class="bg-primary bg-opacity-75 text-white position-absolute bottom-0 start-50 translate-middle-x px-2 rounded-pill small">
+                          Shop Now
+                        </div>
+                      </div>
+                      <p class="mb-0 fw-medium">Glasses</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Women's Collection -->
+      <div class="col-lg-6">
+        <div class="category-card h-100">
+          <div class="card border-0 shadow-lg h-100 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1560253034-1a9c043ffb28?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                   class="card-img-top" alt="Women's Luxury Collection" style="height: 250px; object-fit: cover;">
+              <div class="position-absolute top-0 start-0 p-3">
+                <h3 class="text-white fw-bold mb-0">Women's Collection</h3>
+                <!-- <p class="text-white-50 mb-0">Elegant designs for the sophisticated woman</p> -->
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-3">
+                <div class="col-4">
+                  <a href="womens_shoes.html" class="category-link text-decoration-none">
+                    <div class="category-item text-center p-2">
+                      <div class="position-relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                             class="img-fluid rounded-circle mb-2" style="width: 200px; height: 200px; object-fit: cover;" alt="Women's Shoes">
+                        <div class="bg-danger bg-opacity-75 text-white position-absolute bottom-0 start-50 translate-middle-x px-2 rounded-pill small">
+                          Shop Now
+                        </div>
+                      </div>
+                      <p class="mb-0 fw-medium">Shoes</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-4">
+                  <a href="womens_sandals.html" class="category-link text-decoration-none">
+                    <div class="category-item text-center p-2">
+                      <div class="position-relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1579727027525-352607d8dc49?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             class="img-fluid rounded-circle mb-2" style="width: 200px; height: 200px; object-fit: cover;" alt="Women's Sandals">
+                        <div class="bg-danger bg-opacity-75 text-white position-absolute bottom-0 start-50 translate-middle-x px-2 rounded-pill small">
+                          Shop Now
+                        </div>
+                      </div>
+                      <p class="mb-0 fw-medium">Sandals</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-4">
+                  <a href="womens-watches.html" class="category-link text-decoration-none">
+                    <div class="category-item text-center p-2">
+                      <div class="position-relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                             class="img-fluid rounded-circle mb-2" style="width: 200px; height: 200px; object-fit: cover;" alt="Women's Watches">
+                        <div class="bg-danger bg-opacity-75 text-white position-absolute bottom-0 start-50 translate-middle-x px-2 rounded-pill small">
+                          Shop Now
+                        </div>
+                      </div>
+                      <p class="mb-0 fw-medium">Watches</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-4">
+                  <a href="womens-perfumes.html" class="category-link text-decoration-none">
+                    <div class="category-item text-center p-2">
+                      <div class="position-relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                             class="img-fluid rounded-circle mb-2" style="width: 200px; height: 200px; object-fit: cover;" alt="Women's Perfumes">
+                        <div class="bg-danger bg-opacity-75 text-white position-absolute bottom-0 start-50 translate-middle-x px-2 rounded-pill small">
+                          Shop Now
+                        </div>
+                      </div>
+                      <p class="mb-0 fw-medium">Perfumes</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-4">
+                  <a href="womens-glasses.html" class="category-link text-decoration-none">
+                    <div class="category-item text-center p-2">
+                      <div class="position-relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                             class="img-fluid rounded-circle mb-2" style="width: 200px; height: 200px; object-fit: cover;" alt="Women's Glasses">
+                        <div class="bg-danger bg-opacity-75 text-white position-absolute bottom-0 start-50 translate-middle-x px-2 rounded-pill small">
+                          Shop Now
+                        </div>
+                      </div>
+                      <p class="mb-0 fw-medium">Glasses</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Featured Luxury Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">Featured Luxury</h2>
+      <p class="lead text-muted">Curated Selection of Premium Brands</p>
+    </div>
+    
+    <div class="row g-4">
+      <!-- Row 1 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="brand-item position-relative overflow-hidden rounded-3">
+          <img src="https://images.unsplash.com/photo-1670404160620-a3a86428560e?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+               class="img-fluid w-100 brand-image" alt="Luxury Watch" loading="lazy">
+          <div class="brand-overlay">
+            <div class="brand-content">
+              <h5 class="text-white mb-0">Rolex</h5>
+              <span class="text-white-50">Timeless Elegance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="brand-item position-relative overflow-hidden rounded-3">
+          <img src="https://images.unsplash.com/photo-1669205073423-5da5a5280572?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+               class="img-fluid w-100 brand-image" alt="Designer Shoes" loading="lazy">
+          <div class="brand-overlay">
+            <div class="brand-content">
+              <h5 class="text-white mb-0">Air Jordan</h5>
+              <span class="text-white-50">Game Changers Only</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="brand-item position-relative overflow-hidden rounded-3">
+          <img src="https://images.unsplash.com/photo-1695150721187-7e23cc8ca591?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1738653926533-95a8be6afbfb?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+               class="img-fluid w-100 brand-image" alt="Designer Bag" loading="lazy">
+          <div class="brand-overlay">
+            <div class="brand-content">
+              <h5 class="text-white mb-0">Louis Vuitton</h5>
+              <span class="text-white-50">Parisian Luxury</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="brand-item position-relative overflow-hidden rounded-3">
+          <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+               class="img-fluid w-100 brand-image" alt="Luxury Watch" loading="lazy">
+          <div class="brand-overlay">
+            <div class="brand-content">
+              <h5 class="text-white mb-0">Ray-Ban</h5>
+              <span class="text-white-50">All Eyes on You with Ray-Ban View</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Row 2 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="brand-item position-relative overflow-hidden rounded-3">
+          <img src="https://images.unsplash.com/photo-1591561954555-607968c989ab?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+               class="img-fluid w-100 brand-image" alt="Designer Perfume" loading="lazy">
+          <div class="brand-overlay">
+            <div class="brand-content">
+              <h5 class="text-white mb-0">Gucci</h5>
+              <span class="text-white-50">Eternal symbol of luxury</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="brand-item position-relative overflow-hidden rounded-3">
+          <img src="https://images.unsplash.com/photo-1458538977777-0549b2370168?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+               class="img-fluid w-100 brand-image" alt="Designer Shoes" loading="lazy">
+          <div class="brand-overlay">
+            <div class="brand-content">
+              <h5 class="text-white mb-0">Prada</h5>
+              <span class="text-white-50">Milano Fashion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="brand-item position-relative overflow-hidden rounded-3">
+          <img src="https://images.unsplash.com/photo-1584473457417-bd0afe798ae1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+               class="img-fluid w-100 brand-image" alt="Luxury Watch" loading="lazy">
+          <div class="brand-overlay">
+            <div class="brand-content">
+              <h5 class="text-white mb-0">Hermes</h5>
+              <span class="text-white-50">Elegance Woven in Every Stitch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="brand-item position-relative overflow-hidden rounded-3">
+          <img src="https://images.unsplash.com/photo-1609587312208-cea54be969e7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+               class="img-fluid w-100 brand-image" alt="Designer Suit" loading="lazy">
+          <div class="brand-overlay">
+            <div class="brand-content">
+              <h5 class="text-white mb-0">Hublot</h5>
+              <span class="text-white-50">Own It</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">What Our Clients Say</h2>
+      <p class="lead text-muted">Trusted by luxury lovers worldwide</p>
+    </div>
+    
+    <div class="row g-4
+    ">
+      <div class="col-md-4">
+        <div class="testimonial-card card h-100 border-0 shadow-sm p-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle me-3" width="60" height="60" alt="Client">
+            <div>
+              <h6 class="mb-0">Priya Sharma</h6>
+              <div class="text-warning small">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="mb-0">"The quality of the handbag I purchased exceeded my expectations. The attention to detail is remarkable, and the customer service was exceptional throughout my shopping experience."</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="testimonial-card card h-100 border-0 shadow-sm p-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://randomuser.me/api/portraits/men/54.jpg" class="rounded-circle me-3" width="60" height="60" alt="Client">
+            <div>
+              <h6 class="mb-0">Rahul Mehta</h6>
+              <div class="text-warning small">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="mb-0">"I've been a loyal customer for years. The authenticity of their luxury watches is unmatched. Fast shipping and excellent packaging every single time."</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="testimonial-card card h-100 border-0 shadow-sm p-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-3" width="60" height="60" alt="Client">
+            <div>
+              <h6 class="mb-0">Ananya Patel</h6>
+              <div class="text-warning small">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+          <p class="mb-0">"The perfumes I ordered were beautifully packaged and arrived sooner than expected. The scents are long-lasting and exactly as described. Will definitely shop again!"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section with Animation -->
+<section class="py-5 bg-muted">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card p-4 h-100 shadow-sm rounded-3 bg-white hover-scale">
+          <div class="d-flex align-items-center mb-3">
+            <div class="feature-icon bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+              <i class="fas fa-shipping-fast fa-2x text-primary"></i>
+            </div>
+            <h4 class="mb-0">Fast Delivery</h4>
+          </div>
+          <p class="text-muted mb-0">Express shipping with real-time tracking and contactless delivery options.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card p-4 h-100 shadow-sm rounded-3 bg-white hover-scale">
+          <div class="d-flex align-items-center mb-3">
+            <div class="feature-icon bg-success bg-opacity-10 p-3 rounded-circle me-3">
+              <i class="fas fa-shield-alt fa-2x text-success"></i>
+            </div>
+            <h4 class="mb-0">Authentic Products</h4>
+          </div>
+          <p class="text-muted mb-0">100% genuine luxury items with authenticity guarantee and certification.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card p-4 h-100 shadow-sm rounded-3 bg-white hover-scale">
+          <div class="d-flex align-items-center mb-3">
+            <div class="feature-icon bg-info bg-opacity-10 p-3 rounded-circle me-3">
+              <i class="fas fa-headset fa-2x text-info"></i>
+            </div>
+            <h4 class="mb-0">24/7 Support</h4>
+          </div>
+          <p class="text-muted mb-0">Dedicated luxury advisors available round-the-clock via WhatsApp or phone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h3 class="mb-4">Join Our Luxury Club</h3>
+        <p class="lead mb-4">Subscribe to our newsletter and get 10% off your first order plus exclusive access to new collections and special events.</p>
+        <form class="row g-2 justify-content-center">
+          <div class="col-md-8">
+            <input type="email" class="form-control form-control-lg" placeholder="Enter your email address">
+          </div>
+          <div class="col-md-auto">
+            <button type="submit" class="btn btn-light btn-lg px-4">Subscribe</button>
+          </div>
+        </form>
+        <p class="small text-white-50 mt-3">By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <h5 class="mb-3">
+          <i class="fas fa-gem me-2"></i>Luxury Store
+        </h5>
+        <p class="text-light">Your premier destination for luxury fashion, accessories, and lifestyle products. Experience elegance redefined.</p>
+        <div class="social-links">
+          <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <h6 class="mb-3">Men's</h6>
+        <ul class="list-unstyled">
+          <li><a href="mens_shoes.html" class="text-light text-decoration-none">Shoes</a></li>
+          <li><a href="mens-watches.html" class="text-light text-decoration-none">Watches</a></li>
+          <li><a href="mens-perfumes.html" class="text-light text-decoration-none">Perfumes</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h6 class="mb-3">Women's</h6>
+        <ul class="list-unstyled">
+          <li><a href="womens_shoes.html" class="text-light text-decoration-none">Shoes</a></li>
+          <li><a href="womens-watches.html" class="text-light text-decoration-none">Watches</a></li>
+          <li><a href="womens-perfumes.html" class="text-light text-decoration-none">Perfumes</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h6 class="mb-3">Accessories</h6>
+        <ul class="list-unstyled">
+          <li><a href="bags.html" class="text-light text-decoration-none">Hand Bags</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h6 class="mb-3">Company</h6>
+        <ul class="list-unstyled">
+          <li><a href="about.html" class="text-light text-decoration-none">About Us</a></li>
+          <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Privacy Policy</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="my-4">
+    <div class="text-center">
+      <p class="mb-0">&copy; 2025 Luxury Store. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Add animation classes on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe category cards
+  document.querySelectorAll('.category-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'all 0.6s ease';
+    observer.observe(card);
+  });
+</script>
+</body>
+</html>
