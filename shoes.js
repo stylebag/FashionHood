@@ -62,7 +62,7 @@ function renderProductCard({ id, img, name, link, price, sizes }) {
          data-price="${price}">
       <img src="${img}" alt="${name}">
       <div class="product-name">${name}</div>
-      <div class="product-price">₹ ${price.toLocaleString()}</div>
+      <div class="product-price"><strong>Price : </strong> ₹ ${price.toLocaleString()}</div>
       <b><h5>Sizes</h5></b> ${sizesHTML}
     </div>
   `;
@@ -213,3 +213,4 @@ window.onload = loadProducts;
 if (loadMoreBtn) {
   loadMoreBtn.addEventListener("click", loadProducts);
 }
+
