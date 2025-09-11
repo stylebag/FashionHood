@@ -4,7 +4,7 @@ const path = require('path');
 // Mapping of page titles to their respective taglines
 const pageData = {
     'bags.html': {
-        title: 'Luxury Bags',
+        title: 'Fashion Hood',
         tagline: 'Carry Elegance Wherever You Go'
     },
     'mens-glasses.html': {
