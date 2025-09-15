@@ -1,10 +1,13 @@
 /* ------------------- CONFIG & SETUP ------------------- */
 let limit = 12;
 let loading = false;
+let searchKeyword = ""; // Track search keyword
 
 const productsContainer = document.getElementById("products");
 const loadMoreBtn = document.getElementById("loadMore");
 const loadingSpinner = document.getElementById("loadingSpinner");
+const searchInput = document.getElementById("searchInput");
+const searchBtn = document.getElementById("searchBtn");
 
 // ✅ Read config from HTML
 const CATEGORY = window.PAGE_CONFIG?.category || null;
@@ -47,7 +50,7 @@ function renderProductCard({ id, img, name, link, price }) {
          data-link="${link}"
          data-price="${price}">
       <img src="${img}" alt="${name}">
-      <div class="product-name">${name}</div>
+      <div class="product-name" title="${name}">${name}</div>
       <div class="product-price"><strong>Price : </strong> ₹ ${price.toLocaleString()}</div>
     </div>
   `;
@@ -191,16 +194,20 @@ async function handleProductClick() {
 
 /* ------------------- MAIN LOADER ------------------- */
 
-async function loadProducts() {
+async function loadProducts(reset = false) {
   if (loading || !CATEGORY || API_URLS.length === 0) return;
   loading = true;
-
   loadingSpinner.style.display = "block";
+
+  if (reset) {
+    limit = 12;
+    productsContainer.innerHTML = ""; // Clear old products on new search
+  }
 
   const formData = new URLSearchParams({
     getresult: limit,
     category_slug: CATEGORY,
-    searchkeyword: "",
+    searchkeyword: searchKeyword,   // Use the search keyword
     orderby: "featured",
     min_price: "",
     max_price: "",
@@ -249,7 +256,26 @@ async function loadProducts() {
   }
 }
 
-window.onload = loadProducts;
+// Initialize on page load
+window.onload = () => loadProducts();
+
+// Load more button
 if (loadMoreBtn) {
-  loadMoreBtn.addEventListener("click", loadProducts);
+  loadMoreBtn.addEventListener("click", () => loadProducts());
+}
+
+// Search functionality
+if (searchBtn && searchInput) {
+  searchBtn.addEventListener("click", () => {
+    searchKeyword = searchInput.value.trim();
+    loadProducts(true); // Reset list for new search
+  });
+
+  // Search on Enter key
+  searchInput.addEventListener("keypress", e => {
+    if (e.key === "Enter") {
+      searchKeyword = searchInput.value.trim();
+      loadProducts(true);
+    }
+  });
 }
