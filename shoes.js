@@ -1,10 +1,14 @@
 /* ------------------- CONFIG & SETUP ------------------- */
 let limit = 12;
 let loading = false;
+let searchKeyword = ""; // ✅ Track search keyword
 
 const productsContainer = document.getElementById("products");
 const loadMoreBtn = document.getElementById("loadMore");
 const loadingSpinner = document.getElementById("loadingSpinner");
+const searchInput = document.getElementById("searchInput"); // ✅ new
+const searchBtn = document.getElementById("searchBtn");     // ✅ new
+const noResultsMsg = document.getElementById("noResultsMsg"); // ✅ new div in HTML
 
 // ✅ Read config from HTML
 const CATEGORY = window.PAGE_CONFIG?.category || null;
@@ -12,7 +16,7 @@ const API_URLS = window.PAGE_CONFIG?.apis || [];
 
 // ✅ Safety checks
 if (!CATEGORY || API_URLS.length === 0) {
-  console.error("⚠️ Missing PAGE_CONFIG. Please define window.PAGE_CONFIG before including products.js");
+  console.error("⚠️ Missing PAGE_CONFIG. Please define window.PAGE_CONFIG before including shoes.js");
 }
 
 /* ------------------- HELPERS ------------------- */
@@ -46,7 +50,6 @@ function renderProductCard({ id, img, name, link, price, sizes }) {
   const col = document.createElement("div");
   col.className = "col-lg-3 col-md-4 col-sm-6 col-12 d-flex";
 
-  // ✅ render sizes as badges
   const sizesHTML = sizes.length
     ? `<div class="product-sizes mt-2">
          ${sizes.map(size => `<span class="badge bg-primary me-1">${size}</span>`).join(" ")}
@@ -62,7 +65,7 @@ function renderProductCard({ id, img, name, link, price, sizes }) {
          data-price="${price}">
       <img src="${img}" alt="${name}">
       <div class="product-name">${name}</div>
-      <div class="product-price"><strong>Price : </strong> ₹ ${price.toLocaleString()}</div>
+      <div class="product-price"><strong>Price : </strong> ₹ ${parseInt(price, 10).toLocaleString('en-IN')}</div>
       <b><h5>Sizes</h5></b> ${sizesHTML}
     </div>
   `;
@@ -70,6 +73,8 @@ function renderProductCard({ id, img, name, link, price, sizes }) {
   col.querySelector(".product-card").addEventListener("click", handleProductClick);
   productsContainer.appendChild(col);
 }
+
+/* ------------------- CLICK HANDLER ------------------- */
 
 async function handleProductClick() {
   const { id, name, img, link, price } = this.dataset;
@@ -79,7 +84,6 @@ async function handleProductClick() {
   document.getElementById("modalProductName").innerText = name;
   document.getElementById("modalProductPrice").innerText = "₹ " + parseInt(price).toLocaleString();
 
-  // Show loading state
   const modalCarouselInner = document.getElementById("modalCarouselInner");
   const thumbnailContainer = document.getElementById("modalThumbnails");
   
@@ -90,15 +94,11 @@ async function handleProductClick() {
       </div>
     </div>
   `;
-  
-  if (thumbnailContainer) {
-    thumbnailContainer.innerHTML = '';
-  }
+  if (thumbnailContainer) thumbnailContainer.innerHTML = "";
 
   const images = await fetchProductImages(link);
   const allImages = images.length > 0 ? images : [img];
-  
-  // Clear and populate carousel
+
   modalCarouselInner.innerHTML = "";
   allImages.forEach((src, i) => {
     const div = document.createElement("div");
@@ -107,41 +107,31 @@ async function handleProductClick() {
     modalCarouselInner.appendChild(div);
   });
 
-  // Create thumbnail gallery
   if (thumbnailContainer && allImages.length > 1) {
     allImages.forEach((src, i) => {
       const thumbnail = document.createElement("div");
       thumbnail.className = `thumbnail-item ${i === 0 ? 'active' : ''}`;
       thumbnail.innerHTML = `<img src="${src}" alt="Thumbnail ${i + 1}">`;
-      thumbnail.addEventListener('click', () => {
-        // Update carousel
+      thumbnail.addEventListener("click", () => {
         const carousel = bootstrap.Carousel.getInstance(document.getElementById("modalCarousel"));
         carousel.to(i);
-        
-        // Update active thumbnail
-        document.querySelectorAll('.thumbnail-item').forEach(t => t.classList.remove('active'));
-        thumbnail.classList.add('active');
+        document.querySelectorAll(".thumbnail-item").forEach(t => t.classList.remove("active"));
+        thumbnail.classList.add("active");
       });
       thumbnailContainer.appendChild(thumbnail);
     });
   }
 
-  // Format price with commas
-  const formattedPrice = '₹' + parseInt(price).toLocaleString('en-IN');
-  
-  // Get the main product image URL (use the first image from the modal or fallback to the thumbnail)
-  const modalImg = document.querySelector('#modalCarouselInner .carousel-item.active img');
-  const productImageUrl = modalImg ? modalImg.src : img;
-  
-  // Create a more detailed message with product info and image
+  const formattedPrice = "₹" + parseInt(price).toLocaleString("en-IN");
+  const productImageUrl = allImages[0] || img;
+
   const message = `*Product Inquiry*%0A%0A` +
     `*Product Name:* ${name}%0A` +
     `*Price:* ${formattedPrice}%0A` +
     `*Category:* ${CATEGORY}%0A%0A` +
     `*Product Image:* ${productImageUrl}%0A%0A` +
     `Hello, I'm interested in this product. Could you please provide more details?`;
-    
-  // Set WhatsApp button href with the message
+
   const whatsappBtn = document.getElementById("whatsappBtn");
   whatsappBtn.href = `https://wa.me/919876543210?text=${message}`;
 
@@ -150,16 +140,21 @@ async function handleProductClick() {
 
 /* ------------------- MAIN LOADER ------------------- */
 
-async function loadProducts() {
+async function loadProducts(reset = false) {
   if (loading || !CATEGORY || API_URLS.length === 0) return;
   loading = true;
-
   loadingSpinner.style.display = "block";
+
+  if (reset) {
+    limit = 12;
+    productsContainer.innerHTML = "";
+    if (noResultsMsg) noResultsMsg.style.display = "none"; // hide old message
+  }
 
   const formData = new URLSearchParams({
     getresult: limit,
     category_slug: CATEGORY,
-    searchkeyword: "",
+    searchkeyword: searchKeyword,
     orderby: "featured",
     min_price: "",
     max_price: "",
@@ -193,13 +188,22 @@ async function loadProducts() {
         const link = product.querySelector(".product-details a")?.href || "#";
         const rawPrice = product.querySelector(".price h6")?.innerText.replace(/[^\d]/g, "") || "0";
         const price = (parseInt(rawPrice, 10) || 0) + 1200;
-        const sizes = extractSizes(product); // ✅ new
+        const sizes = extractSizes(product);
 
         renderProductCard({ id, img, name, link, price, sizes });
       });
     });
 
-    if (!productFound) loadMoreBtn.style.display = "none";
+    if (!productFound) {
+      loadMoreBtn.style.display = "none";
+      if (noResultsMsg) {
+        noResultsMsg.innerText = "❌ No products found. Please try another search.";
+        noResultsMsg.style.display = "block";
+      }
+    } else {
+      if (noResultsMsg) noResultsMsg.style.display = "none"; // hide if results found
+    }
+
     limit += 12;
   } catch (error) {
     console.error("Error fetching products:", error);
@@ -209,8 +213,23 @@ async function loadProducts() {
   }
 }
 
-window.onload = loadProducts;
+/* ------------------- INIT ------------------- */
+window.onload = () => loadProducts();
+
 if (loadMoreBtn) {
-  loadMoreBtn.addEventListener("click", loadProducts);
+  loadMoreBtn.addEventListener("click", () => loadProducts());
 }
 
+if (searchBtn && searchInput) {
+  searchBtn.addEventListener("click", () => {
+    searchKeyword = searchInput.value.trim();
+    loadProducts(true);
+  });
+
+  searchInput.addEventListener("keypress", e => {
+    if (e.key === "Enter") {
+      searchKeyword = searchInput.value.trim();
+      loadProducts(true);
+    }
+  });
+}
