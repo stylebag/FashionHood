@@ -69,17 +69,41 @@
 
 <!-- Products -->
 <div class="container my-5">
-  <div class="section-header text-center mb-5">
+  <div class="section-header text-center mb-1">
                 <h2 class="display-5 fw-bold text-uppercase position-relative d-inline-block mb-4">
                     <span class="position-relative z-2">Luxury Bags</span>
                     <span class="position-absolute bottom-0 start-50 translate-middle-x bg-primary" style="height: 4px; width: 80px;"></span>
                 </h2>
                 <p class="text-muted lead mb-0">Carry Elegance Wherever You Go</p>
             </div>
+            <!-- Clean Search Section -->
+            <div class="mb-4">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8 col-md-10">
+                    <div class="search-container">
+                      <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" 
+                               id="searchInput" 
+                               class="search-input" 
+                               placeholder="Search by brand name..."
+                               aria-label="Search products">
+                      </div>
+                      <button id="searchBtn" class="search-btn">
+                        Search
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <div id="products" class="row g-4"></div>
-  <button id="loadMore" class="btn btn-primary">Load More</button>
+            <div class="text-center mt-4">
+              <button id="loadMore" class="btn btn-primary">Load More</button>
+            </div>
 </div>
-
 <!-- 🔹 Spinner (hidden by default) -->
 <div id="loadingSpinner" class="text-center my-4" style="display: none;">
   <div class="spinner-border text-primary" role="status">
